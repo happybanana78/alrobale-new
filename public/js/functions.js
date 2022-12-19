@@ -47,7 +47,12 @@ function initMap() {
 function goToSection(id) {
   $('html, body').animate({
     scrollTop: $(id).offset().top
-}, 1000);
+  }, 1000);
+}
+
+// Scroll up to top
+function backToTop() {
+  // to do
 }
 
 window.initMap = initMap;
