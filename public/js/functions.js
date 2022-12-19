@@ -27,6 +27,7 @@ function initMap() {
 
     // Close modal on bg click
     modalBg.addEventListener('click', () => {
+      document.body.style.overflow = 'visible'; // Make main scroll bar visible again
       modalBg.classList.add('hidden');
       modalBody.classList.add('hidden');
     });
@@ -34,6 +35,7 @@ function initMap() {
     // Load image into modal on image click
     for (let i = 0; i < images.length; i++) {
       images[i].addEventListener('click', () => {
+        document.body.style.overflow = 'hidden';  // Hide main scroll bar
         modalBg.classList.remove('hidden');
         modalBody.classList.remove('hidden');
         scaledImg.src = images[i].src;
