@@ -14,24 +14,24 @@
 </head>
 <body>
     <style> @import url('https://fonts.googleapis.com/css2?family=Lato&family=Shalimar&display=swap'); </style>
+    {{-- Zoom in images modal --}}
     @include('partials._image-modal')
+    {{-- Logout button --}}
+    @auth
+        <form action="/logout" method="POST" class="absolute top-2 right-2 z-50">
+            @csrf
+            <button class="py-2 px-4 bg-red-500 text-white text-xl font-semibold
+            border-2 border-white rounded-lg">Logout</button>
+        </form>
+    @endauth
+    {{-- Main content --}}
     <main class="container mx-auto">
-        <header>
-            @include('partials._navbar')
-            <div class="overflow-y-hidden relative z-10 h-full">
-                <img src="{{asset('images/home.jpg')}}" alt="home image" class="w-full">
-                <strong class="text-white font-semibold text-center
-                absolute top-1/2 left-10 flex flex-col">
-                    <span class="text-6xl">Wie zu hause</span>
-                    <span class="text-3xl">Solo su prenotazione</span>
-                </strong>
-            </div>
-        </header>
         @yield('content')
-        @include('partials._footer')
-        <div class="text-5xl fixed bottom-5 right-5 z-30">
-            <i class="fa-solid fa-circle-chevron-up text-yellow-900
-            cursor-pointer"></i>
+        @yield('admin')
+        {{-- Back to top btn --}}
+        <div class="text-5xl fixed bottom-5 right-5 z-20">
+            <i id="to-top-btn" class="fa-solid fa-circle-chevron-up text-yellow-900
+            cursor-pointer hidden"></i>
         </div>
     </main>
 

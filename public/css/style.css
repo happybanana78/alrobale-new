@@ -19,6 +19,19 @@ nav ul li:hover span {
     animation: menu-item 0.5s forwards;
 }
 
+.menu-animation {
+    animation: sub-menu 0.5s forwards;
+}
+
+@keyframes sub-menu {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
 @keyframes menu-item {
     0% {
         width: 0%;

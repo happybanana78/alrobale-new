@@ -52,9 +52,35 @@ function goToSection(id) {
 
 // Scroll up to top
 function backToTop() {
-  // to do
+  const topBtn = document.getElementById('to-top-btn');
+
+  topBtn.addEventListener('click', () => {
+    $('html, body').animate({
+      scrollTop: $('body').offset().top
+    }, 1000);
+  });
 }
 
-window.initMap = initMap;
+// Open menu sub menu in navbar
+function unfoldMenu() {
+  const menuItem = document.getElementById('menu-sub-menu');
 
-zoomImg();
+  menuItem.classList.toggle('hidden');
+  menuItem.classList.toggle('menu-animation');
+}
+
+window.initMap = initMap; // Intialize google maps map
+
+window.addEventListener('scroll', () => {
+  const topBtn = document.getElementById('to-top-btn');
+
+  if (window.scrollY >= 900) {
+    topBtn.classList.remove('hidden');
+  } else {
+    topBtn.classList.add('hidden');
+  }
+}); 
+
+zoomImg();  // Zoom in images when clicked
+
+backToTop();  // Scroll to top of page when clicked

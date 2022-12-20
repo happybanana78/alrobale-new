@@ -1,6 +1,18 @@
 @extends('layouts.layout')
 
 @section('content')
+    {{-- Header-Nav section --}}
+    <header>
+        @include('partials._navbar')
+        <div class="overflow-y-hidden relative z-10 h-full">
+            <img src="{{asset('images/home.jpg')}}" alt="home image" class="w-full">
+            <strong class="text-white font-semibold text-center
+            absolute top-1/2 left-10 flex flex-col">
+                <span class="text-6xl">Wie zu hause</span>
+                <span class="text-3xl">Solo su prenotazione</span>
+            </strong>
+        </div>
+    </header>
     {{-- Dove Siamo --}}
     <section id="where-section" class="bg-white w-full pt-20 px-10">
         <h2 class="text-yellow-900 font-semibold flex items-center space-x-2
@@ -80,7 +92,7 @@
             </div>
         </div>
         <div class="flex justify-center mt-20">
-            <table class="w-full border-collapse border border-yellow-900 text-2xl text-yellow-900">
+            <table class="w-full border-collapse border border-yellow-900 text-xl text-yellow-900">
                 <thead>
                 <tr class="text-center">
                     <th scope="col" class="border border-yellow-900 py-2">Tipo Camera</th>
@@ -209,4 +221,6 @@
             class="w-96 rounded-lg cursor-pointer where-img">
         </div>
     </section>
+    {{-- Footer section --}}
+    @include('partials._footer')
 @endsection
