@@ -30,13 +30,14 @@
             </article>
             <div id="map" class="w-full h-80 rounded-lg"></div>
         </div>
-        <div class="flex justify-between w-full mt-16">
+        <div class="xl:flex xl:justify-between w-full mt-16 space-y-5 xl:space-y-0
+        px-28 xl:px-0">
             <img src="{{asset('images/dove_siamo_1.jpg')}}" alt="pictures of the wild" 
-            class="w-96 rounded-lg cursor-pointer where-img">
+            class="xl:w-96 w-full rounded-lg cursor-pointer where-img">
             <img src="{{asset('images/dove_siamo_2.jpg')}}" alt="pictures of the wild" 
-            class="w-96 rounded-lg cursor-pointer where-img">
+            class="xl:w-96 w-full rounded-lg cursor-pointer where-img">
             <img src="{{asset('images/dove_siamo_3.jpg')}}" alt="pictures of the wild" 
-            class="w-96 rounded-lg cursor-pointer where-img">
+            class="xl:w-96 w-full rounded-lg cursor-pointer where-img">
         </div>
     </section>
     {{-- Camere --}}
@@ -212,13 +213,14 @@
                 ease-in duration-300">Invia</button>
             </form>
         </div>
-        <div class="flex justify-between w-full mt-16 pb-20">
+        <div class="xl:flex xl:justify-between w-full mt-16 space-y-5 xl:space-y-0
+        px-28 xl:px-0 pb-20">
             <img src="{{asset('images/biscotti.jpg')}}" alt="biscotti di natale" 
-            class="w-96 rounded-lg cursor-pointer where-img">
+            class="xl:w-96 w-full rounded-lg cursor-pointer where-img">
             <img src="{{asset('images/salone.jpg')}}" alt="sala" 
-            class="w-96 rounded-lg cursor-pointer where-img">
+            class="xl:w-96 w-full rounded-lg cursor-pointer where-img">
             <img src="{{asset('images/veranda.jpg')}}" alt="veranda" 
-            class="w-96 rounded-lg cursor-pointer where-img">
+            class="xl:w-96 w-full rounded-lg cursor-pointer where-img">
         </div>
     </section>
     {{-- Footer section --}}
