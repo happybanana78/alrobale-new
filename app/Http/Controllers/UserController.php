@@ -52,5 +52,7 @@ class UserController extends Controller
             $formData['subject'],
             $formData['msg'],
         ));
+
+        return redirect('/');
     }
 }
