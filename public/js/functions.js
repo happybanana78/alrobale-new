@@ -69,6 +69,40 @@ function unfoldMenu() {
   menuItem.classList.toggle('menu-animation');
 }
 
+// Mobile image carousel (dove siamo)
+let slideIndex = 0;
+
+function imageSlider1() {
+  const mobileImg = document.getElementsByClassName('mobile-img');
+
+  for (let i = 0; i < mobileImg.length; i++) {
+    mobileImg[i].style.display = "none";
+  }
+  mobileImg[slideIndex].style.display = "inline-flex";
+  slideIndex++;
+  if (slideIndex >= mobileImg.length) {
+      slideIndex = 0;
+  }
+  setTimeout(imageSlider1, 4000);
+}
+
+// Mobile image carousel (dove footer)
+let slideIndex2 = 0;
+
+function imageSlider2() {
+  const mobileImgFooter = document.getElementsByClassName('mobile-img-footer');
+
+  for (let i = 0; i < mobileImgFooter.length; i++) {
+    mobileImgFooter[i].style.display = "none";
+  }
+  mobileImgFooter[slideIndex2].style.display = "inline-flex";
+  slideIndex2++;
+  if (slideIndex2 >= mobileImgFooter.length) {
+      slideIndex2 = 0;
+  }
+  setTimeout(imageSlider2, 4000);
+}
+
 window.initMap = initMap; // Intialize google maps map
 
 window.addEventListener('scroll', () => {
@@ -84,3 +118,7 @@ window.addEventListener('scroll', () => {
 zoomImg();  // Zoom in images when clicked
 
 backToTop();  // Scroll to top of page when clicked
+
+imageSlider1(); // Start mobile image carousel for 'dove siamo' section
+
+imageSlider2(); // Start mobile image carousel for 'footer' section
