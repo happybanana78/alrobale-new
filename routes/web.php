@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MenuController::class, 'getMenus']);   // Load HomePage
 
+Route::post('/send', [UserController::class, 'sendEmail']); // Send email with contact form
+
 Route::post('/menu/upload', [MenuController::class, 'uploadMenu']); // Upload new menu
 
 Route::post('/menu/remove', [MenuController::class, 'removeMenu']); // Remove menu

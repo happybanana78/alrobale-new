@@ -213,19 +213,20 @@
                     <q>La titolare Alexandra Herrmann</q>
                 </div>
             </div>
-            <form action="" method="POST" class="w-full flex flex-col space-y-2">
+            <form action="/send" method="POST" 
+            class="w-full flex flex-col space-y-2">
                 <label class="text-2xl text-yellow-900" for="name">Nome</label>
-                <input id="name" type="text" placeholder="Nome..." class="px-2 py-4
-                border-2 border-yellow-900 rounded-lg text-xl">
+                <input id="name" type="text" placeholder="Nome..." name="name"
+                class="px-2 py-4 border-2 border-yellow-900 rounded-lg text-xl">
                 <label class="text-2xl text-yellow-900" for="email">Email</label>
-                <input id="email" type="text" placeholder="Email..." class="px-2 py-4
-                border-2 border-yellow-900 rounded-lg text-xl">
+                <input id="email" type="text" placeholder="Email..." name="email"
+                class="px-2 py-4 border-2 border-yellow-900 rounded-lg text-xl">
                 <label class="text-2xl text-yellow-900" for="object">Oggetto</label>
-                <input id="object" type="text" placeholder="Oggetto..." class="px-2 py-4
-                border-2 border-yellow-900 rounded-lg text-xl">
+                <input id="object" type="text" placeholder="Oggetto..." name="subject"
+                class="px-2 py-4 border-2 border-yellow-900 rounded-lg text-xl">
                 <label class="text-2xl text-yellow-900" for="message">Messaggio</label>
-                <textarea name="" id="message" placeholder="Messaggio..." class="px-2 py-4
-                border-2 border-yellow-900 rounded-lg text-xl"></textarea>
+                <textarea name="" id="message" placeholder="Messaggio..." name="message"
+                class="px-2 py-4 border-2 border-yellow-900 rounded-lg text-xl"></textarea>
                 <button class="px-4 py-2 text-white border-2 bg-yellow-900
                 border-white hover:border-yellow-500 text-2xl mt-5 rounded-lg
                 ease-in duration-300">Invia</button>
