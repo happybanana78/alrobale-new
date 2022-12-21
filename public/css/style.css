@@ -8,19 +8,32 @@ header strong {
     letter-spacing: 0.3em;
 }
 
-nav ul li span {
+nav ul.normal-menu li span {
     margin-top: 2px;
     width: 0%;
     height: 2px;
     animation: menu-item-reverse 0.5s forwards;
 }
 
-nav ul li:hover span {
+nav ul.normal-menu li:hover span {
     animation: menu-item 0.5s forwards;
 }
 
 .menu-animation {
     animation: sub-menu 0.5s forwards;
+}
+
+.mobile-menu {
+    animation: mobile-menu-ani 0.3s forwards;
+}
+
+@keyframes mobile-menu-ani {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 @keyframes sub-menu {

@@ -103,6 +103,27 @@ function imageSlider2() {
   setTimeout(imageSlider2, 4000);
 }
 
+// Open mobile menu
+const openBtn = document.getElementById('menu-open-btn');
+const closeBtn = document.getElementById('menu-close-btn');
+
+function openMenu() {
+  const mobileMenu = document.getElementById('mobile');
+
+  openBtn.classList.add('hidden');
+  closeBtn.classList.remove('hidden');
+  mobileMenu.classList.remove('hidden');
+}
+
+// Close mobile menu
+function closeMenu() {
+  const mobileMenu = document.getElementById('mobile');
+
+  closeBtn.classList.add('hidden');
+  openBtn.classList.remove('hidden');
+  mobileMenu.classList.add('hidden');
+}
+
 window.initMap = initMap; // Intialize google maps map
 
 window.addEventListener('scroll', () => {
