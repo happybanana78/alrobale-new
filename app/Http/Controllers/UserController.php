@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -10,6 +12,7 @@ class UserController extends Controller
         return view('user.admin');
     }
 
+    // Handle admin login
     public function adminLogin(Request $request) {
         $formData = $request->validate([
             "username" => "required",
@@ -25,11 +28,29 @@ class UserController extends Controller
         }
     }
 
+    // Logout from admin account
     public function adminLogout(Request $request) {
         auth()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
         return redirect("/");
+    }
+
+    // Handle send email from contact form
+    public function sendMail(Request $request) {
+        $formData = $request->validate([
+            "name" => "required",
+            "email" => "required",
+            "subject" => "required",
+            "msg" => "required",
+        ]);
+
+        Mail::to('info@alrobale.info')->send(new Contact(
+            $formData['name'],
+            $formData['email'],
+            $formData['subject'],
+            $formData['msg'],
+        ));
     }
 }
