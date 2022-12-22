@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [MenuController::class, 'getMenus']);   // Load HomePage
+
+Route::post('/send', [UserController::class, 'sendMail']);  // Send mail from contact form
+
+Route::post('/menu/upload', [MenuController::class, 'uploadMenu']); // Upload new menu
+
+Route::post('/menu/remove', [MenuController::class, 'removeMenu']); // Remove menu
+
+Route::get('/admin', [UserController::class, 'getAdmin']);  // Go to admin login form
+
+Route::post('/admin/login', [UserController::class, 'adminLogin']); // Login as admin
+
+Route::post('/logout', [UserController::class, 'adminLogout']); // Logout from admin account

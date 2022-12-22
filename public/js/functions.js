@@ -27,6 +27,7 @@ function initMap() {
 
     // Close modal on bg click
     modalBg.addEventListener('click', () => {
+      document.body.style.overflow = 'visible'; // Make main scroll bar visible again
       modalBg.classList.add('hidden');
       modalBody.classList.add('hidden');
     });
@@ -34,6 +35,7 @@ function initMap() {
     // Load image into modal on image click
     for (let i = 0; i < images.length; i++) {
       images[i].addEventListener('click', () => {
+        document.body.style.overflow = 'hidden';  // Hide main scroll bar
         modalBg.classList.remove('hidden');
         modalBody.classList.remove('hidden');
         scaledImg.src = images[i].src;
@@ -45,9 +47,109 @@ function initMap() {
 function goToSection(id) {
   $('html, body').animate({
     scrollTop: $(id).offset().top
-}, 1000);
+  }, 1000);
 }
 
-window.initMap = initMap;
+// Scroll up to top
+function backToTop() {
+  const topBtn = document.getElementById('to-top-btn');
 
-zoomImg();
+  topBtn.addEventListener('click', () => {
+    $('html, body').animate({
+      scrollTop: $('body').offset().top
+    }, 1000);
+  });
+}
+
+// Open menu sub menu in navbar
+function unfoldMenu() {
+  const menuItem = document.getElementById('menu-sub-menu');
+
+  menuItem.classList.toggle('hidden');
+  menuItem.classList.toggle('menu-animation');
+}
+
+// Open menu sub menu in navbar for mobile
+function unfoldMobileMenu() {
+  const menuItem = document.getElementById('menu-sub-mobile');
+
+  menuItem.classList.toggle('hidden');
+  menuItem.classList.toggle('menu-animation');
+}
+
+// Mobile image carousel (dove siamo)
+let slideIndex = 0;
+
+function imageSlider1() {
+  const mobileImg = document.getElementsByClassName('mobile-img');
+
+  for (let i = 0; i < mobileImg.length; i++) {
+    mobileImg[i].style.display = "none";
+  }
+  mobileImg[slideIndex].style.display = "inline-flex";
+  slideIndex++;
+  if (slideIndex >= mobileImg.length) {
+      slideIndex = 0;
+  }
+  setTimeout(imageSlider1, 4000);
+}
+
+// Mobile image carousel (dove footer)
+let slideIndex2 = 0;
+
+function imageSlider2() {
+  const mobileImgFooter = document.getElementsByClassName('mobile-img-footer');
+
+  for (let i = 0; i < mobileImgFooter.length; i++) {
+    mobileImgFooter[i].style.display = "none";
+  }
+  mobileImgFooter[slideIndex2].style.display = "inline-flex";
+  slideIndex2++;
+  if (slideIndex2 >= mobileImgFooter.length) {
+      slideIndex2 = 0;
+  }
+  setTimeout(imageSlider2, 4000);
+}
+
+// Open mobile menu
+const openBtn = document.getElementById('menu-open-btn');
+const closeBtn = document.getElementById('menu-close-btn');
+
+function openMenu() {
+  const mobileMenu = document.getElementById('mobile');
+
+  openBtn.classList.add('hidden');
+  closeBtn.classList.remove('hidden');
+  mobileMenu.classList.remove('hidden');
+}
+
+// Close mobile menu
+function closeMenu() {
+  const menuItem = document.getElementById('menu-sub-mobile');
+  const mobileMenu = document.getElementById('mobile');
+
+  closeBtn.classList.add('hidden');
+  openBtn.classList.remove('hidden');
+  mobileMenu.classList.add('hidden');
+  menuItem.classList.add('hidden');
+}
+
+window.initMap = initMap; // Intialize google maps map
+
+window.addEventListener('scroll', () => {
+  const topBtn = document.getElementById('to-top-btn');
+
+  if (window.scrollY >= 900) {
+    topBtn.classList.remove('hidden');
+  } else {
+    topBtn.classList.add('hidden');
+  }
+}); 
+
+zoomImg();  // Zoom in images when clicked
+
+backToTop();  // Scroll to top of page when clicked
+
+imageSlider1(); // Start mobile image carousel for 'dove siamo' section
+
+imageSlider2(); // Start mobile image carousel for 'footer' section
