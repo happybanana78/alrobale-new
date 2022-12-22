@@ -98,14 +98,15 @@ relative top-0 z-20 w-full">
                 <a onclick="goToSection('#contact-section')">Contatti</a>
                 <span class="bg-yellow-900"></span>
             </li>
-            <li class="flex flex-col cursor-pointer text-center" onclick="unfoldMenu()">
+            <li class="flex flex-col cursor-pointer text-center" onclick="unfoldMobileMenu()">
                 Menù
                 <span class="bg-yellow-900"></span>
             </li>
             {{-- Menu list for admin --}}
             @auth
-                <div id="menu-sub-menu" class="flex flex-col space-y-4 text-xl font-semibold
-                p-5 absolute right-0 bg-white top-10 h-40 overflow-y-auto hidden rounded-lg">
+                <div id="menu-sub-mobile" class="flex flex-col space-y-4 text-xl font-semibold
+                p-5 absolute bg-white top-44 h-40 overflow-y-auto hidden rounded-lg
+                left-1/2 -translate-x-1/2">
                     @foreach ($menus as $menu)
                         <div class="flex justify-between items-center space-x-10 w-full">
                             <a 
@@ -138,8 +139,8 @@ relative top-0 z-20 w-full">
             @endauth
             {{-- Menu list for normal user --}}
             @if (!Auth::check())
-                <div id="menu-sub-menu" class="flex flex-col space-y-4 text-xl font-semibold
-                p-5 absolute right-0 bg-white top-10 h-40 overflow-y-auto hidden rounded-lg">
+                <div id="menu-sub-mobile" class="flex flex-col space-y-4 text-xl font-semibold hidden
+                p-5 absolute left-1/2 -translate-x-1/2 bg-white top-44 h-40 overflow-y-auto rounded-lg">
                     @foreach ($menus as $menu)
                             <a 
                             href="/docs/{{$menu['menuFullName']}}" 
