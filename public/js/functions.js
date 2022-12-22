@@ -69,6 +69,14 @@ function unfoldMenu() {
   menuItem.classList.toggle('menu-animation');
 }
 
+// Open menu sub menu in navbar for mobile
+function unfoldMobileMenu() {
+  const menuItem = document.getElementById('menu-sub-mobile');
+
+  menuItem.classList.toggle('hidden');
+  menuItem.classList.toggle('menu-animation');
+}
+
 // Mobile image carousel (dove siamo)
 let slideIndex = 0;
 
@@ -117,11 +125,13 @@ function openMenu() {
 
 // Close mobile menu
 function closeMenu() {
+  const menuItem = document.getElementById('menu-sub-mobile');
   const mobileMenu = document.getElementById('mobile');
 
   closeBtn.classList.add('hidden');
   openBtn.classList.remove('hidden');
   mobileMenu.classList.add('hidden');
+  menuItem.classList.add('hidden');
 }
 
 window.initMap = initMap; // Intialize google maps map
