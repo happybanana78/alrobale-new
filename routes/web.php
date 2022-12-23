@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MenuController::class, 'getMenus']);   // Load HomePage
+
+Route::get('/galleria', [GalleryController::class, 'getGallery']);   // Load image gallery page
 
 Route::post('/send', [UserController::class, 'sendMail']);  // Send mail from contact form
 

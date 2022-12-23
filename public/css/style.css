@@ -27,6 +27,10 @@ nav ul.normal-menu li:hover span {
     animation: mobile-menu-ani 0.3s forwards;
 }
 
+.gallery-arrow-bg {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 @keyframes mobile-menu-ani {
     0% {
         opacity: 0%;

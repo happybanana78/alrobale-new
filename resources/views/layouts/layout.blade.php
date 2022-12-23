@@ -36,6 +36,7 @@
     {{-- Main content --}}
     <main class="container mx-auto">
         @yield('content')
+        @yield('gallery')
         @yield('admin')
         {{-- Back to top btn --}}
         <div class="text-5xl fixed bottom-5 right-5 z-20">
@@ -45,7 +46,6 @@
     </main>
 
 
-    <script src="{{asset('js/functions.js')}}" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-uJ4DfH7Rq2FfUs2U-tANjDjuIKRmzI&callback=initMap&v=weekly" defer></script>
 </body>
 </html>
