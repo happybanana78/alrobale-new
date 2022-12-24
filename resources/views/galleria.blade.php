@@ -7,14 +7,14 @@
         </a>
     </div>
     <section class="flex justify-center">
-        <div class="mt-20 relative w-fit">
+        <div class="mt-20 relative gallery-container w-4/5 overflow-hidden justify-center flex
+        bg-black">
             @foreach ($images as $image)
-                <a href="/images/gallery/{{$image}}" class="gallery-img">
-                    <img src="/images/gallery/{{$image}}" alt="{{basename($image)}}" 
-                    class="gallery-zoom-img w-full">
-                </a>
+                <img src="/images/gallery/{{$image}}" alt="{{basename($image)}}" 
+                class="gallery-img w-fit">
             @endforeach
-            <div class="w-full flex justify-between items-center absolute top-1/2 -translate-y-1/2 h-full">
+            <div class="w-full flex justify-between items-center absolute top-1/2 -translate-y-1/2 
+            h-full">
                 <button class="text-5xl font-semibold text-white
                 gallery-arrow-bg h-full w-20 cursor-default">
                     <i id="galleryBack" class="fa-solid fa-circle-chevron-left cursor-pointer"></i>
