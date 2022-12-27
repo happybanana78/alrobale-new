@@ -5,6 +5,28 @@ const galleryForward = document.querySelector('#galleryForward');
 
 let counter = 0;    // Images counter for progression or regression
 
+// Slide right animation
+function slideRight(img) {
+    let animation = anime({
+        targets: img,
+        translateX: 400,
+        easing: 'linear',
+        duration: 300,
+      });
+      animation.reverse;
+    // setTimeout(() => {})
+}
+
+// Slide left animation
+function slideLeft() {
+    anime({
+        targets: '.gallery-img',
+        translateX: 400,
+        easing: 'linear',
+        duration: 300,
+      });
+}
+
 // Hide all images
 for (let i = 0; i < galleryImg.length; i++) {
     galleryImg[i].classList.add('hidden');
@@ -16,6 +38,8 @@ galleryImg[counter].classList.remove('hidden');
 // Listen for next image event
 galleryForward.addEventListener('click', () => {
     counter++;
+    //galleryImg[counter].style.marginLeft = "-800px";
+    //slideRight(galleryImg[counter]);
     if (counter > galleryImg.length - 1) {
         counter = 0;
         galleryImg[galleryImg.length - 1].classList.add('hidden');

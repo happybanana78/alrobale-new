@@ -2,8 +2,10 @@
 
 @section('gallery')
     <div class="w-72">
-        <a href="/" class="">
-            <img src="{{asset('images/logo.png')}}" alt="logo image" class="w-72 mt-10">
+        <a href="/" class="flex space-x-4 items-center font-semibold text-3xl text-yellow-900
+        mt-10">
+            <i class="fa-solid fa-house"></i>
+            <span>Torna alla Home</span>
         </a>
     </div>
     <section class="flex justify-center">
@@ -27,4 +29,5 @@
         </div>
     </section>
     <script src="{{asset('js/gallery.js')}}" defer></script>
+    <script src="{{asset('js/anime.min.js')}}"></script>
 @endsection
