@@ -262,4 +262,5 @@
     </section>
     {{-- Footer section --}}
     @include('partials._footer')
+    <script src="{{asset('js/functions.js')}}" defer></script>
 @endsection
