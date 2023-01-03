@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
+    private Array $images;
+
     // Load home page with menu list
     public function getMenus() {
         $path = "docs";
@@ -29,8 +31,12 @@ class MenuController extends Controller
             }
         }
 
+        // Get images for gallery
+        $this->getGallery();
+
         return view('home', [
             "menus" => $menuList,
+            "images" => $this->images,
         ]);
     }
 
@@ -49,5 +55,20 @@ class MenuController extends Controller
         unlink(public_path() . "/docs/" . $fileName);
 
         return redirect('/');
+    }
+
+    // Load image gallery page
+    private function getGallery() {
+        $path = "images/gallery";
+        $images = scandir($path);
+        $polishedImages = [];
+
+        foreach ($images as $image) {
+            if ($image != "." && $image != "..") {
+                array_push($polishedImages, $image);
+            }
+        }
+
+        $this->images = $polishedImages;
     }
 }

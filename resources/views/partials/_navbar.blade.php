@@ -10,6 +10,10 @@ relative top-0 z-20 w-full">
             <span class="bg-yellow-900"></span>
         </li>
         <li class="flex flex-col cursor-pointer">
+            <a onclick="goToSection('#who-section')">Chi Siamo</a>
+            <span class="bg-yellow-900"></span>
+        </li>
+        <li class="flex flex-col cursor-pointer">
             <a onclick="goToSection('#where-section')">Dove Siamo</a>
             <span class="bg-yellow-900"></span>
         </li>
@@ -92,6 +96,10 @@ relative top-0 z-20 w-full">
         <ul class="flex flex-col space-y-5 text-2xl font-semibold text-yellow-900 relative">
             <li class="flex flex-col cursor-pointer text-center">
                 <a onclick="goToSection('#rooms-section')">Camere</a>
+                <span class="bg-yellow-900"></span>
+            </li>
+            <li class="flex flex-col cursor-pointer text-center">
+                <a onclick="goToSection('#who-section')">Chi Siamo</a>
                 <span class="bg-yellow-900"></span>
             </li>
             <li class="flex flex-col cursor-pointer text-center">

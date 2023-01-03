@@ -21,7 +21,7 @@
     @vite('resources/css/app.css')
     <title>Agriturismo Al Robale</title>
 </head>
-<body>
+<body class="overflow-x-hidden">
     <style> @import url('https://fonts.googleapis.com/css2?family=Lato&family=Shalimar&display=swap'); </style>
     {{-- Zoom in images modal --}}
     @include('partials._image-modal')
