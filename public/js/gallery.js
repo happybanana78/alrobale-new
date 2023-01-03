@@ -31,14 +31,14 @@ function slideLeft() {
 // Hide all images
 for (let i = 0; i < galleryImg.length; i++) {
     galleryImg[i].classList.add('hidden');
-    if (galleryRemove) {
+    if (galleryRemove.length != 0) {
         galleryRemove[i].classList.add('hidden');
     }
 }
 
 // Show first image when gallery first loads
 galleryImg[counter].classList.remove('hidden');
-if (galleryRemove) {
+if (galleryRemove.length != 0) {
     galleryRemove[counter].classList.remove('hidden');
 }
 
@@ -50,17 +50,17 @@ galleryForward.addEventListener('click', () => {
     if (counter > galleryImg.length - 1) {
         counter = 0;
         galleryImg[galleryImg.length - 1].classList.add('hidden');
-        if (galleryRemove) {
+        if (galleryRemove.length != 0) {
             galleryRemove[galleryRemove.length - 1].classList.add('hidden');
         }
     } else {
         galleryImg[counter - 1].classList.add('hidden');
-        if (galleryRemove) {
+        if (galleryRemove.length != 0) {
             galleryRemove[counter - 1].classList.add('hidden');
         }
     }
     galleryImg[counter].classList.remove('hidden');
-    if (galleryRemove) {
+    if (galleryRemove.length != 0) {
         galleryRemove[counter].classList.remove('hidden');
     }
 });
@@ -72,18 +72,18 @@ galleryBack.addEventListener('click', () => {
         counter = galleryImg.length - 1;
         galleryImg[0].classList.add('hidden');
         galleryImg[galleryImg.length - 1].classList.remove('hidden');
-        if (galleryRemove) {
+        if (galleryRemove.length != 0) {
             galleryRemove[0].classList.add('hidden');
             galleryRemove[galleryRemove.length - 1].classList.remove('hidden');
         }
     } else {
         galleryImg[counter + 1].classList.add('hidden');
-        if (galleryRemove) {
+        if (galleryRemove.length != 0) {
             galleryRemove[counter + 1].classList.add('hidden');
         }
     }
     galleryImg[counter].classList.remove('hidden');
-    if (galleryRemove) {
+    if (galleryRemove.length != 0) {
         galleryRemove[counter].classList.remove('hidden');
     }
 });
