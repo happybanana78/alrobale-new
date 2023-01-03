@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
+    private Array $images;
+
     // Load home page with menu list
     public function getMenus() {
         $path = "docs";
@@ -29,8 +31,12 @@ class MenuController extends Controller
             }
         }
 
+        // Get images for gallery
+        $this->getGallery();
+
         return view('home', [
             "menus" => $menuList,
+            "images" => $this->images,
         ]);
     }
 
@@ -47,6 +53,39 @@ class MenuController extends Controller
     public function removeMenu(Request $request) {
         $fileName = $request->input('menuName');
         unlink(public_path() . "/docs/" . $fileName);
+
+        return redirect('/');
+    }
+
+    // Load image gallery page
+    private function getGallery() {
+        $path = "images/gallery";
+        $images = scandir($path);
+        $polishedImages = [];
+
+        foreach ($images as $image) {
+            if ($image != "." && $image != "..") {
+                array_push($polishedImages, $image);
+            }
+        }
+
+        $this->images = $polishedImages;
+    }
+
+    // Upload new image to gallery
+    public function uploadImage(Request $request) {
+        $fileName = $request->file('image')->getClientOriginalName();
+
+        $request->file('image')->storeAs("", $fileName, "gallery");
+
+        return redirect('/');
+    }
+
+    // Remove image from gallery
+    public function removeImage(Request $request) {
+        $fileName = $request->input('imageName');
+        //dd($fileName);
+        unlink(public_path() . "/images/gallery/" . $fileName);
 
         return redirect('/');
     }

@@ -11,12 +11,12 @@
                     Username
                 </label>
                 <input id="username" type="text" name="username" class="text-xl py-1 px-2
-                rounded-lg border border-yellow-900 w-full">
+                rounded-lg border border-yellow-900 w-full" required>
                 <label for="username" class="text-2xl text-yellow-900">
                     Password
                 </label>
                 <input id="password" type="password" name="password" class="text-xl py-1 px-2
-                rounded-lg border border-yellow-900 w-full">
+                rounded-lg border border-yellow-900 w-full" required>
                 <div class="text-center pt-10">
                     <button class="px-4 py-2 bg-yellow-900 text-white border-2 border-white
                     font-semibold text-xl rounded-lg w-40 hover:border-yellow-300 

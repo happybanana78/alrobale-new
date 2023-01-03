@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -18,13 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MenuController::class, 'getMenus']);   // Load HomePage
 
-Route::get('/galleria', [GalleryController::class, 'getGallery']);   // Load image gallery page
-
 Route::post('/send', [UserController::class, 'sendMail']);  // Send mail from contact form
 
 Route::post('/menu/upload', [MenuController::class, 'uploadMenu']); // Upload new menu
 
 Route::post('/menu/remove', [MenuController::class, 'removeMenu']); // Remove menu
+
+Route::post('/gallery/upload', [MenuController::class, 'uploadImage']); // Upload image to gallery
+
+Route::post('/gallery/remove', [MenuController::class, 'removeImage']); // Remove image from gallery
 
 Route::get('/admin', [UserController::class, 'getAdmin']);  // Go to admin login form
 
