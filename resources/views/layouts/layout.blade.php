@@ -46,6 +46,10 @@
     </main>
 
 
+
+    
+    <script src="{{asset('js/gallery.js')}}" defer></script>
+    <script src="{{asset('js/functions.js')}}" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-uJ4DfH7Rq2FfUs2U-tANjDjuIKRmzI&callback=initMap&v=weekly" defer></script>
 </body>
 </html>
