@@ -18,10 +18,6 @@ relative top-0 z-20 w-full">
             <span class="bg-yellow-900"></span>
         </li>
         <li class="flex flex-col cursor-pointer">
-            <a href="/galleria">Galleria</a>
-            <span class="bg-yellow-900"></span>
-        </li>
-        <li class="flex flex-col cursor-pointer">
             <a onclick="goToSection('#contact-section')">Contatti</a>
             <span class="bg-yellow-900"></span>
         </li>
