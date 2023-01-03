@@ -6,23 +6,23 @@ relative top-0 z-20 w-full">
     <ul class="lg:flex space-x-5 text-2xl font-semibold text-yellow-900 relative hidden
     normal-menu">
         <li class="flex flex-col cursor-pointer">
-            <a onclick="goToSection('#rooms-section')">Camere</a>
+            <a onclick="goToSection('#rooms-section')">{{__('Rooms')}}</a>
             <span class="bg-yellow-900"></span>
         </li>
         <li class="flex flex-col cursor-pointer">
-            <a onclick="goToSection('#who-section')">Chi Siamo</a>
+            <a onclick="goToSection('#who-section')">{{__('About us')}}</a>
             <span class="bg-yellow-900"></span>
         </li>
         <li class="flex flex-col cursor-pointer">
-            <a onclick="goToSection('#where-section')">Dove Siamo</a>
+            <a onclick="goToSection('#where-section')">{{__('Where we are')}}</a>
             <span class="bg-yellow-900"></span>
         </li>
         <li class="flex flex-col cursor-pointer">
-            <a onclick="goToSection('#contact-section')">Contatti</a>
+            <a onclick="goToSection('#contact-section')">{{__('Contacts')}}</a>
             <span class="bg-yellow-900"></span>
         </li>
         <li class="flex flex-col cursor-pointer" onclick="unfoldMenu()">
-            Menù
+            {{__('Menus')}}
             <span class="bg-yellow-900"></span>
         </li>
         {{-- Menu list for admin --}}
@@ -78,8 +78,12 @@ relative top-0 z-20 w-full">
     class="py-2 px-4 font-semibold text-2xl bg-white
     rounded-lg border-2 border-yellow-900 text-yellow-900 hidden lg:block
     hover:border-white hover:text-white hover:bg-yellow-900 ease-in duration-100">
-        Prenota Ora
+        {{__('Book now')}}
     </button>
+    {{-- Change language --}}
+    <div>
+
+    </div>
     {{-- Mobile navbar --}}
     <div class="text-3xl font-semibold text-yellow-900 block lg:hidden">
         <i id="menu-open-btn" onclick="openMenu()"
