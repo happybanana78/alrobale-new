@@ -71,4 +71,22 @@ class MenuController extends Controller
 
         $this->images = $polishedImages;
     }
+
+    // Upload new image to gallery
+    public function uploadImage(Request $request) {
+        $fileName = $request->file('image')->getClientOriginalName();
+
+        $request->file('image')->storeAs("", $fileName, "gallery");
+
+        return redirect('/');
+    }
+
+    // Remove image from gallery
+    public function removeImage(Request $request) {
+        $fileName = $request->input('imageName');
+        //dd($fileName);
+        unlink(public_path() . "/images/gallery/" . $fileName);
+
+        return redirect('/');
+    }
 }

@@ -76,10 +76,38 @@
                 da un clima mite collinare in tutte le stagioni.
                 L'azienda agricola coltiva <b>asparagi e lamponi</b>, produce <b>miele</b> e alleva oche. 
             </article>
+            {{-- Add new image to gallery --}}
+            @auth
+                <div class="ml-10">
+                    <form id="new-image-form" action="/gallery/upload" method="POST" class="text-center"
+                    enctype="multipart/form-data">
+                        @csrf
+                        <input id="new-image" type="file" name="image" 
+                        onchange="document.getElementById('new-image-form').submit()"
+                        class="hidden">
+                        <label for="new-image" class="p-2 w-10 h-10 rounded-full bg-yellow-900
+                        cursor-pointer flex items-center justify-center">
+                            <i class="fa-solid fa-plus text-white text-2xl"></i>
+                        </label>
+                    </form>
+                </div>
+            @endauth
             {{-- Image gallery display --}}
             <div class="mt-20 relative gallery-container w-full overflow-hidden justify-center sm:flex
-            bg-black h-96 rounded-lg hidden">
+            bg-black h-96 rounded-lg hidden relative">
                 @foreach ($images as $image)
+                    @auth
+                        <form action="/gallery/remove" method="POST" class="absolute top-5 z-20
+                        gallery-img-remove">
+                            @csrf
+                            <input type="hidden" name="imageName" 
+                            value="{{$image}}">
+                            <button class="flex justify-center items-center p-2 w-10 h-10
+                            bg-white rounded-full">
+                                <i class="fa-solid fa-xmark cursor-pointer text-yellow-900"></i>
+                            </button>
+                        </form>
+                    @endauth
                     <img src="/images/gallery/{{$image}}" alt="{{basename($image)}}" 
                     class="gallery-img w-fit">
                 @endforeach
