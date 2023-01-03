@@ -23,6 +23,10 @@ Route::post('/menu/upload', [MenuController::class, 'uploadMenu']); // Upload ne
 
 Route::post('/menu/remove', [MenuController::class, 'removeMenu']); // Remove menu
 
+Route::post('/gallery/upload', [MenuController::class, 'uploadImage']); // Upload image to gallery
+
+Route::post('/gallery/remove', [MenuController::class, 'removeImage']); // Remove image from gallery
+
 Route::get('/admin', [UserController::class, 'getAdmin']);  // Go to admin login form
 
 Route::post('/admin/login', [UserController::class, 'adminLogin']); // Login as admin

@@ -55,8 +55,86 @@
             sm:top-0 left-1/2 -translate-x-1/2">
         </div>
     </section>
+     {{-- Chi Siamo --}}
+     <section id="who-section" class="bg-white w-full pt-20 px-10">
+        <h2 class="text-yellow-900 font-semibold flex items-center space-x-2
+        justify-center text-center">
+            <i class="fa-solid fa-circle"></i>
+            <p class="text-3xl">QUALCOSA SU DI NOI</p>
+            <i class="fa-solid fa-circle"></i>
+        </h2>
+        <div class="mt-20 flex flex-col md:flex-row md:justify-between items-center
+        md:space-y-0 space-y-10 pb-10 md:pb-0 md:flex-row-reverse">
+            <article class="text-yellow-900 text-2xl w-full text-center md:text-left md:ml-10">
+                L'agriturismo è gestito dalla <b>Sig.ra Herrmann Alexandra</b>, imprenditrice, 
+                agricoltrice e chef di origini bavaresi (tedesca di Norimberga), 
+                vincintrice della <b>pentola d'oro agnelli</b> coldiretti per l'anno 2014. 
+                La chef regala ai suoi ospiti un soggiorno all'insegna della natura e di una 
+                ricercata cucina a base di <b>prodotti propri o locali</b>.
+                L'agriturismo offre un soggiorno nel pieno relax, 
+                ideale anche per un turismo meno giovane, dolcemente accompagnato 
+                da un clima mite collinare in tutte le stagioni.
+                L'azienda agricola coltiva <b>asparagi e lamponi</b>, produce <b>miele</b> e alleva oche. 
+            </article>
+            {{-- Add new image to gallery --}}
+            @auth
+                <div class="ml-10">
+                    <form id="new-image-form" action="/gallery/upload" method="POST" class="text-center"
+                    enctype="multipart/form-data">
+                        @csrf
+                        <input id="new-image" type="file" name="image" 
+                        onchange="document.getElementById('new-image-form').submit()"
+                        class="hidden">
+                        <label for="new-image" class="p-2 w-10 h-10 rounded-full bg-yellow-900
+                        cursor-pointer flex items-center justify-center">
+                            <i class="fa-solid fa-plus text-white text-2xl"></i>
+                        </label>
+                    </form>
+                </div>
+            @endauth
+            {{-- Image gallery display --}}
+            <div class="mt-20 relative gallery-container w-full overflow-hidden justify-center sm:flex
+            bg-black h-96 rounded-lg hidden relative">
+                @foreach ($images as $image)
+                    @auth
+                        <form action="/gallery/remove" method="POST" class="absolute top-5 z-20
+                        gallery-img-remove">
+                            @csrf
+                            <input type="hidden" name="imageName" 
+                            value="{{$image}}">
+                            <button class="flex justify-center items-center p-2 w-10 h-10
+                            bg-white rounded-full">
+                                <i class="fa-solid fa-xmark cursor-pointer text-yellow-900"></i>
+                            </button>
+                        </form>
+                    @endauth
+                    <img src="/images/gallery/{{$image}}" alt="{{basename($image)}}" 
+                    class="gallery-img w-fit">
+                @endforeach
+                <div class="w-full flex justify-between items-center absolute top-1/2 -translate-y-1/2 
+                h-full">
+                    <button class="text-5xl font-semibold text-white
+                    gallery-arrow-bg h-full w-20 cursor-default">
+                        <i id="galleryBack" class="fa-solid fa-circle-chevron-left cursor-pointer"></i>
+                    </button>
+                    <button class="text-5xl font-semibold text-white
+                    gallery-arrow-bg h-full w-20 cursor-default">
+                        <i id="galleryForward" class="fa-solid fa-circle-chevron-right cursor-pointer"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mt-20 text-center text-yellow-900 text-3xl font-semibold w-full">
+            <h2 class="ease-in hover:scale-125 duration-300 w-full cursor-pointer
+            sm:underline sm:underline-offset-4">
+                <a onclick="goToSection('#contact-section')">
+                    Possibilità di prenotare in esclusiva il locale!
+                </a>
+            </h2>
+        </div>
+    </section>
     {{-- Camere --}}
-    <section id="rooms-section" class="bg-white w-full sm:pt-20 px-10 relative">
+    <section id="rooms-section" class="bg-white w-full pt-20 px-10 relative">
         <h2 class="text-yellow-900 font-semibold flex items-center space-x-2
         justify-center text-center">
             <i class="fa-solid fa-circle"></i>
@@ -262,4 +340,6 @@
     </section>
     {{-- Footer section --}}
     @include('partials._footer')
+    <script src="{{asset('js/gallery.js')}}" defer></script>
+    <script src="{{asset('js/functions.js')}}" defer></script>
 @endsection
