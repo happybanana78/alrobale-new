@@ -24,11 +24,8 @@
         </h2>
         <div class="mt-20 flex flex-col md:flex-row md:justify-between items-center
         md:space-x-10 md:space-y-0 space-y-10 pb-10 md:pb-0">
-            <article class="text-yellow-900 text-2xl w-full text-center">
-                Siamo un piccolo agriturismo familiare in provincia di Bergamo.
-                Ci troviamo in zona pre-alpina immersi nei boschi dell'Albenza,
-                una contrada del comune di Almenno San Bartolomeo.
-                Di preciso ci troviamo in Via cabinetti 2, Almenno San Bartolomeo 24030 (BG)
+            <article class="text-yellow-900 text-2xl w-full text-center md:text-left">
+                {{__('home.where')}}
             </article>
             <div id="map" class="w-full h-80 rounded-lg"></div>
         </div>
@@ -66,15 +63,7 @@
         <div class="mt-20 flex flex-col md:flex-row md:justify-between items-center
         md:space-y-0 space-y-10 pb-10 md:pb-0 md:flex-row-reverse">
             <article class="text-yellow-900 text-2xl w-full text-center md:text-left md:ml-10">
-                L'agriturismo è gestito dalla <b>Sig.ra Herrmann Alexandra</b>, imprenditrice, 
-                agricoltrice e chef di origini bavaresi (tedesca di Norimberga), 
-                vincintrice della <b>pentola d'oro agnelli</b> coldiretti per l'anno 2014. 
-                La chef regala ai suoi ospiti un soggiorno all'insegna della natura e di una 
-                ricercata cucina a base di <b>prodotti propri o locali</b>.
-                L'agriturismo offre un soggiorno nel pieno relax, 
-                ideale anche per un turismo meno giovane, dolcemente accompagnato 
-                da un clima mite collinare in tutte le stagioni.
-                L'azienda agricola coltiva <b>asparagi e lamponi</b>, produce <b>miele</b> e alleva oche. 
+                {{__('home.about')}} 
             </article>
             {{-- Add new image to gallery --}}
             @auth
@@ -190,83 +179,83 @@
             <table class="w-full border-collapse border border-yellow-900 text-xl text-yellow-900">
                 <thead>
                 <tr class="text-center">
-                    <th scope="col" class="border border-yellow-900 py-2">Tipo Camera</th>
-                    <th scope="col" class="border border-yellow-900 py-2">Numero Persone</th>
-                    <th scope="col" class="border border-yellow-900 py-2">Colazione</th>
-                    <th scope="col" class="border border-yellow-900 py-2">Prezzo (a testa)</th>
+                    <th scope="col" class="border border-yellow-900 py-2">{{__('Room type')}}</th>
+                    <th scope="col" class="border border-yellow-900 py-2">{{__('Persons')}}</th>
+                    <th scope="col" class="border border-yellow-900 py-2">{{__('Breakfast')}}</th>
+                    <th scope="col" class="border border-yellow-900 py-2">{{__('Price')}} ({{__('Each')}})</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Camera Singola</td>
+                    <td class="border border-yellow-900 py-2">{{__('Single room')}}</td>
                     <td class="border border-yellow-900 py-2">1</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">100€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Camera Singola</td>
+                    <td class="border border-yellow-900 py-2">{{__('Single room')}}</td>
                     <td class="border border-yellow-900 py-2">1</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">120€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Camera Doppia</td>
+                    <td class="border border-yellow-900 py-2">{{__('Double room')}}</td>
                     <td class="border border-yellow-900 py-2">2</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">120€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Camera Doppia</td>
+                    <td class="border border-yellow-900 py-2">{{__('Double room')}}</td>
                     <td class="border border-yellow-900 py-2">2</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">140€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">2</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">130€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">2</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">140€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">3</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">140€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">3</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">150€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">4</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">180€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">4</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">200€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">5</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">220€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">5</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">250€</td>
                 </tr>
                 </tbody>
