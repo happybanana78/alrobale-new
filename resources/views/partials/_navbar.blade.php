@@ -6,27 +6,23 @@ relative top-0 z-20 w-full">
     <ul class="lg:flex space-x-5 text-2xl font-semibold text-yellow-900 relative hidden
     normal-menu">
         <li class="flex flex-col cursor-pointer">
-            <a onclick="goToSection('#rooms-section')">Camere</a>
+            <a onclick="goToSection('#rooms-section')">{{__('Rooms')}}</a>
             <span class="bg-yellow-900"></span>
         </li>
         <li class="flex flex-col cursor-pointer">
-            <a onclick="goToSection('#who-section')">Chi Siamo</a>
+            <a onclick="goToSection('#who-section')">{{__('About us')}}</a>
             <span class="bg-yellow-900"></span>
         </li>
         <li class="flex flex-col cursor-pointer">
-            <a onclick="goToSection('#where-section')">Dove Siamo</a>
+            <a onclick="goToSection('#where-section')">{{__('Where we are')}}</a>
             <span class="bg-yellow-900"></span>
         </li>
         <li class="flex flex-col cursor-pointer">
-            <a href="/galleria">Galleria</a>
-            <span class="bg-yellow-900"></span>
-        </li>
-        <li class="flex flex-col cursor-pointer">
-            <a onclick="goToSection('#contact-section')">Contatti</a>
+            <a onclick="goToSection('#contact-section')">{{__('Contacts')}}</a>
             <span class="bg-yellow-900"></span>
         </li>
         <li class="flex flex-col cursor-pointer" onclick="unfoldMenu()">
-            Menù
+            {{__('Menus')}}
             <span class="bg-yellow-900"></span>
         </li>
         {{-- Menu list for admin --}}
@@ -82,8 +78,30 @@ relative top-0 z-20 w-full">
     class="py-2 px-4 font-semibold text-2xl bg-white
     rounded-lg border-2 border-yellow-900 text-yellow-900 hidden lg:block
     hover:border-white hover:text-white hover:bg-yellow-900 ease-in duration-100">
-        Prenota Ora
+        {{__('Book now')}}
     </button>
+    {{-- Change language --}}
+    <div id="lang-body" class="fixed top-5 right-0 w-14 h-10 bg-yellow-900 flex items-center
+    justify-center p-2 space-x-2 rounded-lg">
+        <i 
+        id="close-lang" 
+        class="fa-solid fa-chevron-right text-white text-sm cursor-pointer"></i>
+        <i 
+        id="open-lang-select" 
+        class="fa-solid fa-globe text-white text-2xl cursor-pointer"></i>
+    </div>
+    <div id="open-lang-body"
+    class="fixed top-5 right-0 w-4 h-10 bg-yellow-900 flex items-center
+    justify-center p-2 space-x-2 hidden rounded-l-lg">
+        <i 
+        id="open-lang" 
+        class="fa-solid fa-chevron-left text-white text-sm cursor-pointer"></i>
+    </div>
+    <div id="lang" class="w-32 p-2 bg-yellow-900 text-white font-semibold flex flex-col
+    text-center space-y-2 fixed right-0 top-14 rounded-l-lg hidden">
+        <a href="/en">English</a>
+        <a href="/it">Italiano</a>
+    </div>
     {{-- Mobile navbar --}}
     <div class="text-3xl font-semibold text-yellow-900 block lg:hidden">
         <i id="menu-open-btn" onclick="openMenu()"

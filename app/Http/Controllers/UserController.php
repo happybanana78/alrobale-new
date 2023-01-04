@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Contact;
+use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller

@@ -1,7 +1,7 @@
 <footer class="relative bottom-0 left-0 w-full bg-white px-10 py-2 flex 
 flex-col md:flex-row md:justify-between md:items-center text-center">
     <span class="text-yellow-900 font-semibold text-lg">
-        © 2022 Copyright Tutti diritti riservati <a href="/">alrobale.info</a>
+        © {{__('Copyright All rights reserved')}} <a href="/">alrobale.info</a>
     </span>
     <div class="flex text-yellow-900 font-semibold text-lg space-x-4 justify-center">
         <a href="tel:+39035642633">Tel: +39 035 642633</a>
