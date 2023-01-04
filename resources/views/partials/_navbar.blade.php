@@ -82,7 +82,8 @@ relative top-0 z-20 w-full">
     </button>
     {{-- Change language --}}
     <div>
-
+        <a href="/lang/en">en</a>
+        <a href="/lang/it">it</a>
     </div>
     {{-- Mobile navbar --}}
     <div class="text-3xl font-semibold text-yellow-900 block lg:hidden">

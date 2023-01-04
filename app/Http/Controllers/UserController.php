@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Contact;
+use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
@@ -54,5 +56,18 @@ class UserController extends Controller
         ));
 
         return redirect('/');
+    }
+
+    public function setLangEn() {
+        App::setLocale('en');
+
+        return redirect("/");
+    }
+
+    public function setLangIt() {
+        $app = new Application();
+        $app>setLocale(session('my_locale', config('app.locale')));
+
+        return redirect("/");
     }
 }

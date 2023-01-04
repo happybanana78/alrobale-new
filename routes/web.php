@@ -32,3 +32,5 @@ Route::get('/admin', [UserController::class, 'getAdmin']);  // Go to admin login
 Route::post('/admin/login', [UserController::class, 'adminLogin']); // Login as admin
 
 Route::post('/logout', [UserController::class, 'adminLogout']); // Logout from admin account
+
+Route::get('/lang/en', [UserController::class, 'setLangEn']); // Change site language
