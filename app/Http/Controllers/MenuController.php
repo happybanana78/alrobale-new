@@ -89,4 +89,12 @@ class MenuController extends Controller
 
         return redirect('/');
     }
+
+    // Set site language
+    public function setLang($locale) {
+        app()->setLocale($locale);
+        session()->put('locale', $locale);
+
+        return $this->getMenus();
+    }
 }

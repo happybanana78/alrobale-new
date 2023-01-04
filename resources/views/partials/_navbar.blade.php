@@ -81,9 +81,26 @@ relative top-0 z-20 w-full">
         {{__('Book now')}}
     </button>
     {{-- Change language --}}
-    <div>
-        <a href="/lang/en">en</a>
-        <a href="/lang/it">it</a>
+    <div id="lang-body" class="fixed top-5 right-0 w-14 h-10 bg-yellow-900 flex items-center
+    justify-center p-2 space-x-2 rounded-lg">
+        <i 
+        id="close-lang" 
+        class="fa-solid fa-chevron-right text-white text-sm cursor-pointer"></i>
+        <i 
+        id="open-lang-select" 
+        class="fa-solid fa-globe text-white text-2xl cursor-pointer"></i>
+    </div>
+    <div id="open-lang-body"
+    class="fixed top-5 right-0 w-4 h-10 bg-yellow-900 flex items-center
+    justify-center p-2 space-x-2 hidden rounded-l-lg">
+        <i 
+        id="open-lang" 
+        class="fa-solid fa-chevron-left text-white text-sm cursor-pointer"></i>
+    </div>
+    <div id="lang" class="w-32 p-2 bg-yellow-900 text-white font-semibold flex flex-col
+    text-center space-y-2 fixed right-0 top-14 rounded-l-lg hidden">
+        <a href="/en">English</a>
+        <a href="/it">Italiano</a>
     </div>
     {{-- Mobile navbar --}}
     <div class="text-3xl font-semibold text-yellow-900 block lg:hidden">

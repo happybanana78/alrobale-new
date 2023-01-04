@@ -146,6 +146,31 @@ window.addEventListener('scroll', () => {
   }
 }); 
 
+// Lang Vars
+const lang = document.getElementById('lang');
+const langBody = document.getElementById('lang-body');
+const openLang = document.getElementById('open-lang');
+const openLangBody = document.getElementById('open-lang-body');
+const closeLang = document.getElementById('close-lang');
+const openLangSelect = document.getElementById('open-lang-select');
+
+// Handle language switch UI
+closeLang.addEventListener('click', () => {
+  langBody.classList.add('hidden');
+  openLangBody.classList.remove('hidden');
+  lang.classList.add('hidden');
+});
+
+openLang.addEventListener('click', () => {
+  langBody.classList.remove('hidden');
+  openLangBody.classList.add('hidden');
+});
+
+openLangSelect.addEventListener('click', () => {
+  openLangBody.classList.add('hidden');
+  lang.classList.remove('hidden');
+});
+
 zoomImg();  // Zoom in images when clicked
 
 backToTop();  // Scroll to top of page when clicked

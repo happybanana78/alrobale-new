@@ -57,17 +57,4 @@ class UserController extends Controller
 
         return redirect('/');
     }
-
-    public function setLangEn() {
-        App::setLocale('en');
-
-        return redirect("/");
-    }
-
-    public function setLangIt() {
-        $app = new Application();
-        $app>setLocale(session('my_locale', config('app.locale')));
-
-        return redirect("/");
-    }
 }
