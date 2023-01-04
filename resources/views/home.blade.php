@@ -10,7 +10,7 @@
             absolute top-1/2 md:left-10 flex flex-col left-1/2 -translate-x-1/2
             md:translate-x-0 -translate-y-1/2 md:w-fit w-full">
                 <span class="text-4xl sm:text-6xl">Wie zu hause</span>
-                <span class="text-xl sm:text-3xl">Solo su prenotazione</span>
+                <span class="text-xl sm:text-3xl">{{__('By reservation only')}}</span>
             </strong>
         </div>
     </header>
@@ -19,16 +19,13 @@
         <h2 class="text-yellow-900 font-semibold flex items-center space-x-2
         justify-center text-center">
             <i class="fa-solid fa-circle"></i>
-            <p class="text-3xl">DOVE SIAMO</p>
+            <p class="text-3xl">{{strtoupper(__('Where we are'))}}</p>
             <i class="fa-solid fa-circle"></i>
         </h2>
         <div class="mt-20 flex flex-col md:flex-row md:justify-between items-center
         md:space-x-10 md:space-y-0 space-y-10 pb-10 md:pb-0">
-            <article class="text-yellow-900 text-2xl w-full text-center">
-                Siamo un piccolo agriturismo familiare in provincia di Bergamo.
-                Ci troviamo in zona pre-alpina immersi nei boschi dell'Albenza,
-                una contrada del comune di Almenno San Bartolomeo.
-                Di preciso ci troviamo in Via cabinetti 2, Almenno San Bartolomeo 24030 (BG)
+            <article class="text-yellow-900 text-2xl w-full text-center md:text-left">
+                {{__('home.where')}}
             </article>
             <div id="map" class="w-full h-80 rounded-lg"></div>
         </div>
@@ -60,21 +57,13 @@
         <h2 class="text-yellow-900 font-semibold flex items-center space-x-2
         justify-center text-center">
             <i class="fa-solid fa-circle"></i>
-            <p class="text-3xl">QUALCOSA SU DI NOI</p>
+            <p class="text-3xl">{{strtoupper(__('Something about us'))}}</p>
             <i class="fa-solid fa-circle"></i>
         </h2>
         <div class="mt-20 flex flex-col md:flex-row md:justify-between items-center
         md:space-y-0 space-y-10 pb-10 md:pb-0 md:flex-row-reverse">
             <article class="text-yellow-900 text-2xl w-full text-center md:text-left md:ml-10">
-                L'agriturismo è gestito dalla <b>Sig.ra Herrmann Alexandra</b>, imprenditrice, 
-                agricoltrice e chef di origini bavaresi (tedesca di Norimberga), 
-                vincintrice della <b>pentola d'oro agnelli</b> coldiretti per l'anno 2014. 
-                La chef regala ai suoi ospiti un soggiorno all'insegna della natura e di una 
-                ricercata cucina a base di <b>prodotti propri o locali</b>.
-                L'agriturismo offre un soggiorno nel pieno relax, 
-                ideale anche per un turismo meno giovane, dolcemente accompagnato 
-                da un clima mite collinare in tutte le stagioni.
-                L'azienda agricola coltiva <b>asparagi e lamponi</b>, produce <b>miele</b> e alleva oche. 
+                {{__('home.about')}} 
             </article>
             {{-- Add new image to gallery --}}
             @auth
@@ -128,7 +117,7 @@
             <h2 class="ease-in hover:scale-125 duration-300 w-full cursor-pointer
             sm:underline sm:underline-offset-4">
                 <a onclick="goToSection('#contact-section')">
-                    Possibilità di prenotare in esclusiva il locale!
+                    {{__('Possibility to book the venue exclusively!')}}
                 </a>
             </h2>
         </div>
@@ -138,7 +127,7 @@
         <h2 class="text-yellow-900 font-semibold flex items-center space-x-2
         justify-center text-center">
             <i class="fa-solid fa-circle"></i>
-            <p class="text-3xl">LE CAMERE</p>
+            <p class="text-3xl">{{strtoupper(__('Rooms'))}}</p>
             <i class="fa-solid fa-circle"></i>
         </h2>
         <div class="flex flex-col md:flex-row md:items-center md:justify-between mt-20
@@ -147,7 +136,7 @@
                 <div class="w-full flex justify-center mb-5">
                     <span class="text-yellow-900 text-3xl font-semibold">
                         <i class="fa-solid fa-bed mr-5"></i>
-                        Singola
+                        {{__('Single')}}
                     </span>
                 </div>
                 <div class="w-full flex justify-center">
@@ -161,7 +150,7 @@
                 <div class="w-full flex justify-center mb-5">
                     <span class="text-yellow-900 text-3xl font-semibold">
                         <i class="fa-solid fa-bed mr-5"></i>
-                        Doppia
+                        {{__('Double')}}
                     </span>
                 </div>
                 <div class="w-full flex justify-center">
@@ -175,7 +164,7 @@
                 <div class="w-full flex justify-center mb-5">
                     <span class="text-yellow-900 text-3xl font-semibold">
                         <i class="fa-solid fa-bed mr-5"></i>
-                        Appartamento
+                        {{__('Apartment')}}
                     </span>
                 </div>
                 <div class="w-full flex justify-center">
@@ -190,83 +179,83 @@
             <table class="w-full border-collapse border border-yellow-900 text-xl text-yellow-900">
                 <thead>
                 <tr class="text-center">
-                    <th scope="col" class="border border-yellow-900 py-2">Tipo Camera</th>
-                    <th scope="col" class="border border-yellow-900 py-2">Numero Persone</th>
-                    <th scope="col" class="border border-yellow-900 py-2">Colazione</th>
-                    <th scope="col" class="border border-yellow-900 py-2">Prezzo (a testa)</th>
+                    <th scope="col" class="border border-yellow-900 py-2">{{__('Room type')}}</th>
+                    <th scope="col" class="border border-yellow-900 py-2">{{__('Persons')}}</th>
+                    <th scope="col" class="border border-yellow-900 py-2">{{__('Breakfast')}}</th>
+                    <th scope="col" class="border border-yellow-900 py-2">{{__('Price')}} ({{__('Each')}})</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Camera Singola</td>
+                    <td class="border border-yellow-900 py-2">{{__('Single room')}}</td>
                     <td class="border border-yellow-900 py-2">1</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">100€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Camera Singola</td>
+                    <td class="border border-yellow-900 py-2">{{__('Single room')}}</td>
                     <td class="border border-yellow-900 py-2">1</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">120€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Camera Doppia</td>
+                    <td class="border border-yellow-900 py-2">{{__('Double room')}}</td>
                     <td class="border border-yellow-900 py-2">2</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">120€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Camera Doppia</td>
+                    <td class="border border-yellow-900 py-2">{{__('Double room')}}</td>
                     <td class="border border-yellow-900 py-2">2</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">140€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">2</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">130€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">2</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">140€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">3</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">140€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">3</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">150€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">4</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">180€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">4</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">200€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">5</td>
-                    <td class="border border-yellow-900 py-2">Esclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Excluded')}}</td>
                     <td class="border border-yellow-900 py-2">220€</td>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-yellow-900 py-2">Appartamento</td>
+                    <td class="border border-yellow-900 py-2">{{__('Apartment')}}</td>
                     <td class="border border-yellow-900 py-2">5</td>
-                    <td class="border border-yellow-900 py-2">Inclusa</td>
+                    <td class="border border-yellow-900 py-2">{{__('Included')}}</td>
                     <td class="border border-yellow-900 py-2">250€</td>
                 </tr>
                 </tbody>
@@ -278,7 +267,7 @@
         <h2 class="text-yellow-900 font-semibold flex items-center space-x-2
         justify-center text-center">
             <i class="fa-solid fa-circle"></i>
-            <p class="text-3xl">CONTATTACI</p>
+            <p class="text-3xl">{{strtoupper(__('Contact us'))}}</p>
             <i class="fa-solid fa-circle"></i>
         </h2>
         <div class="flex flex-col md:flex-row md:justify-between md:items-center mt-20
@@ -288,26 +277,26 @@
                 <div class="w-full text-center w-2/3">
                     <img src="{{asset('images/alexandra.jpg')}}" alt="Alexandra Herrmann"
                     class="rounded-lg w-full mb-5">
-                    <q>La titolare Alexandra Herrmann</q>
+                    <q>{{__('The owner')}} Alexandra Herrmann</q>
                 </div>
             </div>
             <form action="/send" method="POST" class="w-full flex flex-col space-y-2">
                 @csrf
-                <label class="text-2xl text-yellow-900" for="name">Nome</label>
-                <input id="name" type="text" placeholder="Nome..." name="name" 
+                <label class="text-2xl text-yellow-900" for="name">{{__('Name')}}</label>
+                <input id="name" type="text" placeholder="{{__('Name')}}..." name="name" 
                 class="px-2 py-4 border-2 border-yellow-900 rounded-lg text-xl">
-                <label class="text-2xl text-yellow-900" for="email">Email</label>
-                <input id="email" type="text" placeholder="Email..." name="email" 
+                <label class="text-2xl text-yellow-900" for="email">{{__('Email')}}</label>
+                <input id="email" type="text" placeholder="{{__('Email')}}..." name="email" 
                 class="px-2 py-4 border-2 border-yellow-900 rounded-lg text-xl">
-                <label class="text-2xl text-yellow-900" for="object">Oggetto</label>
-                <input id="object" type="text" placeholder="Oggetto..." name="subject" 
+                <label class="text-2xl text-yellow-900" for="object">{{__('Subject')}}</label>
+                <input id="object" type="text" placeholder="{{__('Subject')}}..." name="subject" 
                 class="px-2 py-4 border-2 border-yellow-900 rounded-lg text-xl">
-                <label class="text-2xl text-yellow-900" for="message">Messaggio</label>
-                <textarea id="message" placeholder="Messaggio..." name="msg" 
+                <label class="text-2xl text-yellow-900" for="message">{{__('Message')}}</label>
+                <textarea id="message" placeholder="{{__('Message')}}..." name="msg" 
                 class="px-2 py-4 border-2 border-yellow-900 rounded-lg text-xl"></textarea>
                 <button class="px-4 py-2 text-white border-2 bg-yellow-900
                 border-white hover:border-yellow-500 text-2xl mt-5 rounded-lg
-                ease-in duration-300">Invia</button>
+                ease-in duration-300">{{__('Send')}}</button>
             </form>
         </div>
         <div class="xl:flex xl:justify-between w-full mt-16 space-y-5 xl:space-y-0
